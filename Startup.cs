@@ -50,6 +50,11 @@ namespace SoftlineTest
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "api",
+                    pattern: "api/{controller}/{action}/{id?}",
+                    defaults: new { controller = "Api" });
+               
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Tasks}/{action=Index}/{id?}");
             });
